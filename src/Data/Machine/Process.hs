@@ -150,6 +150,7 @@ buffered = repeatedly . go [] where
 -- ('<~') :: 'Process' c d -> 'Data.Machine.Tee.Tee' a b c -> 'Data.Machine.Tee.Tee' a b d
 -- ('<~') :: 'Process' b c -> 'Machine' k b -> 'Machine' k c
 -- @
+{-# INLINE (<~) #-}
 (<~) :: Monad m => ProcessT m b c -> MachineT m k b -> MachineT m k c
 mp <~ ma = MachineT $ runMachineT mp >>= \v -> case v of
   Stop          -> return Stop

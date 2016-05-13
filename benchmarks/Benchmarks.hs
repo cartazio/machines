@@ -1,14 +1,16 @@
+{-#LANGUAGE Safe #-}
 module Main (main) where
 
 import Control.Monad (void)
 import Control.Monad.Identity
-import Criterion.Main
+import CriterionLame
 import qualified Data.Conduit      as C
-import qualified Data.Conduit.Combinators as CC
+import qualified ConduitLame as CC
 import qualified Data.Conduit.List as C
 import qualified Data.Machine      as M
 import qualified Pipes             as P
 import qualified Pipes.Prelude     as P
+
 
 value :: Int
 value = 1000000
